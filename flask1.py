@@ -13,7 +13,9 @@ def report():
 if __name__ == '__main__':
     app.run()
 
-# good news.  this works. 
-# bad news. it's fugly.  
+# good news.  this works.
+# bad news. it's fugly.
 
 # time to iterate. *dingdingding*
+
+#adding a minor change to trigger a push
