@@ -28,6 +28,8 @@ def report():
     return render_template('blah.html') # <- the return actually gives you the results of the render_template, using the blah.html file
 					# remember, Flask is looking for that blah.html file in your templates folder.
 					# you can't just stick it in your app directory and expect it to work.
+    return render_template('view.html',tables=[setosa.to_html(classes='setosa'), versicolor.to_html(classes='versicolor'), virginica.to_html(classes='virginica')],
+    titles = ['Setosa', 'Versicolor', 'Virginica'])
 
 if __name__ == '__main__':  	# <- I still have no idea what in the hell this is for.
 				# near as I can tell, it's looking for something called __name__ which is defined in the Flask(__name__) line
