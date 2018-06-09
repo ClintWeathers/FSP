@@ -25,9 +25,13 @@ def report():
     blah = df.to_html(open('./templates/blah.html', 'w')) # <- here's the magic.
 	# what happens here is pandas renders the df to (in this case) blah.html and writes it to your specific location
 	# in this case, it's where the render_template function will be looking for blah.html: inside the templates folder that Flask uses.
-    return render_template('blah.html') # <- the return actually gives you the results of the render_template, using the blah.html file
+
+    #return render_template('blah.html') # <- the return actually gives you the results of the render_template, using the blah.html file
 					# remember, Flask is looking for that blah.html file in your templates folder.
 					# you can't just stick it in your app directory and expect it to work.
+
+    return render_template('blah.html',blah=[setosa.to_html(classes='setosa'), versicolor.to_html(classes='versicolor'), virginica.to_html(classes='virginica')],
+    titles = ['Setosa', 'Versicolor', 'Virginica'])
 
 if __name__ == '__main__':  	# <- I still have no idea what in the hell this is for.
 				# near as I can tell, it's looking for something called __name__ which is defined in the Flask(__name__) line
