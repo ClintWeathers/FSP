@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 @app.route("/tables")
 def show_tables():
-    data = pd.read_csv('iris.csv')
+    df = pd.read_csv('iris.csv')
     #data.set_index(['Name'], inplace=True)
-    data.index.name=None
+    df.index.name=None
     setosa = df.loc[df.species=='setosa']
     versicolor = df.loc[df.species=='versicolor']
     virginica = df.loc[df.species=='virginica']
